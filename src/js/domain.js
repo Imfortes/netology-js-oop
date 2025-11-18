@@ -14,64 +14,73 @@ class Character {
     this.type = type;
     this.health = 100;
     this.level = 1;
+
+    switch (type) {
+      case 'Bowman':
+      case 'Undead':
+        this.attack = 25;
+        this.defence = 25;
+        break;
+      case 'Swordsman':
+      case 'Zombie':
+        this.attack = 40;
+        this.defence = 10;
+        break;
+      case 'Magician':
+      case 'Daemon':
+        this.attack = 10;
+        this.defence = 40;
+        break;
+      default:
+        throw new Error('Неизвестный тип персонажа');
+    }
   }
 
   levelUp() {
-    
+    if (this.health > 0) {
+      this.level += 1
+      this.attack = Number(this.attack * 1.2).toFixed(2)
+      this.defence = Number(this.attack * 1.2).toFixed(2)
+      this.health = 100
+    } else {
+      throw new Error('Level Up нельзя сделать у умершего героя');
+    }
   }
 }
 
 export class Bowman extends Character {
   constructor(name) {
     super(name, "Bowman");
-
-    this.attack = 25;
-    this.defense = 25;
   }
 }
 
 export class Swordsman extends Character {
   constructor(name) {
     super(name, "Swordsman");
-
-    this.attack = 40;
-    this.defense = 10;
   }
 }
 
 export class Magician extends Character {
   constructor(name) {
     super(name, "Magicians");
-
-    this.attack = 10;
-    this.defense = 40;
   }
 }
 
 export class Undead extends Character {
   constructor(name) {
     super(name, "Undead");
-
-    this.attack = 25;
-    this.defense = 25;
   }
 }
 
 export class Zombie extends Character {
   constructor(name) {
     super(name, "Zombie");
-
-    this.attack = 40;
-    this.defense = 10;
   }
 }
 
 export class Daemon extends Character {
   constructor(name) {
     super(name, "Daemon");
-
-    this.attack = 10;
-    this.defense = 40;
   }
 }
 

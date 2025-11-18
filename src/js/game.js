@@ -12,6 +12,11 @@ class Game {
     console.log(zombie);
     // Character { name: 'Zom', type: 'Zombie', health: 100, level: 1, attack: 40, defence: 10 }
 
+    zombie.levelUp();
+    zombie.levelUp();
+    zombie.levelUp();
+    console.log(zombie)
+
     // Ошибки:
     new Swordsman('A');        // Error: Name too short
     new Magician('VeryLongName123'); // Error: Name too long
