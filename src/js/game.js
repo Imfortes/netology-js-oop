@@ -6,21 +6,27 @@ class Game {
 
     const bowman = new Bowman('Legolas');
     console.log(bowman);
-    // Character { name: 'Legolas', type: 'Bowman', health: 100, level: 1, attack: 25, defence: 25 }
+    bowman.levelUp()
+    console.log(bowman);
+
+    bowman.damage(100)
+    console.log(bowman);
 
     const zombie = new Zombie('Zom');
     console.log(zombie);
-    // Character { name: 'Zom', type: 'Zombie', health: 100, level: 1, attack: 40, defence: 10 }
 
     zombie.levelUp();
     zombie.levelUp();
     zombie.levelUp();
     console.log(zombie)
 
-    // Ошибки:
-    new Swordsman('A');        // Error: Name too short
-    new Magician('VeryLongName123'); // Error: Name too long
-    new Character('Bob', 'Warrior'); // Error: Invalid type
+    const swordsman = new Swordsman('Alex');
+    const magician = new Magician('FireMage');
+    const deamon = new Daemon('Azazel');
+
+    console.log(swordsman)
+    console.log(magician)
+    console.log(deamon)
   }
 }
 
