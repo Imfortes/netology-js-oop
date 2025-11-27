@@ -1,4 +1,12 @@
-import { Bowman, Swordsman, Magician, Undead, Zombie, Daemon } from './domain.js';
+// import { Bowman, Swordsman, Magician, Undead, Zombie, Daemon } from './domain.js';
+// import Character from './classes/Character'
+
+import {Bowman} from './classes/Bowman'
+import {Daemon} from './classes/Daemon'
+import {Magician} from './classes/Magician'
+import {Swordsman} from './classes/Swordsman'
+import {Undead} from './classes/Undead'
+import {Zombie} from './classes/Zombie'
 
 class Game {
   start() {
@@ -23,6 +31,7 @@ class Game {
     const swordsman = new Swordsman('Alex');
     const magician = new Magician('FireMage');
     const deamon = new Daemon('Azazel');
+    const undead = new Daemon('Undead');
 
     console.log(swordsman)
     console.log(magician)
