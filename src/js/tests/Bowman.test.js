@@ -3,12 +3,16 @@ import { Bowman } from '../classes/Bowman.js';
 describe('Bowman', () => {
   test('should create with valid name and type', () => {
     const bowman = new Bowman('Legolas');
-    expect(bowman.name).toBe('Legolas');
-    expect(bowman.type).toBe('Bowman');
-    expect(bowman.health).toBe(100);
-    expect(bowman.level).toBe(1);
-    expect(bowman.attack).toBe(25);
-    expect(bowman.defence).toBe(25);
+
+    const correct = {
+      attack: 25,
+      defence: 25,
+      health: 100,
+      level: 1,
+      name: 'Legolas',
+      type: 'Bowman',
+    }
+    expect(bowman).toEqual(correct);
   });
 
   test('should throw error for invalid name', () => {
