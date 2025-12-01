@@ -3,12 +3,17 @@ import { Swordsman } from '../classes/Swordsman.js';
 describe('Swordsman', () => {
   test('should create with valid name and type', () => {
     const swordsman = new Swordsman('Aragorn');
-    expect(swordsman.name).toBe('Aragorn');
-    expect(swordsman.type).toBe('Swordsman');
-    expect(swordsman.health).toBe(100);
-    expect(swordsman.level).toBe(1);
-    expect(swordsman.attack).toBe(40);
-    expect(swordsman.defence).toBe(10);
+
+    const correct = {
+      attack: 40,
+      defence: 10,
+      health: 100,
+      level: 1,
+      name: 'Aragorn',
+      type: 'Swordsman',
+    }
+
+    expect(swordsman).toEqual(correct);
   });
 
   test('should level up correctly', () => {

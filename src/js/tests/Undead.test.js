@@ -3,12 +3,17 @@ import { Undead } from '../classes/Undead.js';
 describe('Undead', () => {
   test('should create with valid name and type', () => {
     const undead = new Undead('ZombieKing');
-    expect(undead.name).toBe('ZombieKing');
-    expect(undead.type).toBe('Undead');
-    expect(undead.health).toBe(100);
-    expect(undead.level).toBe(1);
-    expect(undead.attack).toBe(25);
-    expect(undead.defence).toBe(25);
+
+    const correct = {
+      attack: 25,
+      defence: 25,
+      health: 100,
+      level: 1,
+      name: 'ZombieKing',
+      type: 'Undead',
+    }
+
+    expect(undead).toEqual(correct);
   });
 
   test('should level up correctly', () => {

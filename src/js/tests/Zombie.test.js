@@ -3,12 +3,17 @@ import { Zombie } from '../classes/Zombie.js';
 describe('Zombie', () => {
   test('should create with valid name and type', () => {
     const zombie = new Zombie('Zom');
-    expect(zombie.name).toBe('Zom');
-    expect(zombie.type).toBe('Zombie');
-    expect(zombie.health).toBe(100);
-    expect(zombie.level).toBe(1);
-    expect(zombie.attack).toBe(40);
-    expect(zombie.defence).toBe(10);
+
+    const correct = {
+      attack: 40,
+      defence: 10,
+      health: 100,
+      level: 1,
+      name: 'Zom',
+      type: 'Zombie',
+    }
+
+    expect(zombie).toEqual(correct);
   });
 
   test('should level up correctly', () => {

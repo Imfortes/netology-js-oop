@@ -3,12 +3,17 @@ import { Daemon } from '../classes/Daemon.js';
 describe('Daemon', () => {
   test('should create with valid name and type', () => {
     const daemon = new Daemon('Doom');
-    expect(daemon.name).toBe('Doom');
-    expect(daemon.type).toBe('Daemon');
-    expect(daemon.health).toBe(100);
-    expect(daemon.level).toBe(1);
-    expect(daemon.attack).toBe(10);
-    expect(daemon.defence).toBe(40);
+
+    const correct = {
+      attack: 10,
+      defence: 40,
+      health: 100,
+      level: 1,
+      name: 'Doom',
+      type: 'Daemon',
+    }
+
+    expect(daemon).toEqual(correct);
   });
 
   test('should level up correctly', () => {
